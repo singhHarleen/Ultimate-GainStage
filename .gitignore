@@ -1,0 +1,50 @@
+# JUCE Build artifacts
+Builds/*/x64/
+Builds/*/.vs/
+Builds/*/Debug/
+Builds/*/Release/
+Builds/*/*.db
+Builds/*/*.db-shm
+Builds/*/*.db-wal
+Builds/*/*.opendb
+Builds/*/*.vsidx
+Builds/*/ipch/
+
+# Visual Studio
+*.vcxproj.user
+*.suo
+*.sdf
+*.opensdf
+*.ncb
+*.VC.db
+*.VC.VC.opendb
+.vs/
+
+# Xcode
+*.xcuserdata
+*.xcworkspace
+DerivedData/
+
+# macOS
+.DS_Store
+*.dSYM/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Plugin builds
+*.vst3
+*.vst
+*.component
+*.aaxplugin
+*.app
+
+# JuceLibraryCode is auto-generated but we'll keep it for easier builds
+# Uncomment if you prefer to regenerate from .jucer
+# JuceLibraryCode/
+
+# IDE
+*.swp
+*.swo
+*~
