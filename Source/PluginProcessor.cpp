@@ -333,6 +333,23 @@ void UltimateGainStageAudioProcessor::processAfterMode(juce::AudioBuffer<float>&
         buffer.applyGain(outputGainLinear);
     }
 
+    // Safety limiter - soft clip at 0dBFS
+    bool clipped = false;
+    for (int ch = 0; ch < buffer.getNumChannels(); ++ch)
+    {
+        float* data = buffer.getWritePointer(ch);
+        for (int i = 0; i < numSamples; ++i)
+        {
+            if (std::abs(data[i]) > 1.0f)
+            {
+                clipped = true;
+                // Soft clipping using tanh
+                data[i] = std::tanh(data[i]);
+            }
+        }
+    }
+    isClipping_.store(clipped);
+
     outputAnalyzer_.process(buffer);
     outputLeveldB_.store(outputAnalyzer_.getRMSdB());
 }

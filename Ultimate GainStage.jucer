@@ -10,6 +10,8 @@
       <FILE id="Params1" name="Parameters.h" compile="0" resource="0" file="Source/Parameters.h"/>
       <FILE id="GainAna1" name="GainAnalyzer.h" compile="0" resource="0"
             file="Source/GainAnalyzer.h"/>
+      <FILE id="CustomLF1" name="CustomLookAndFeel.h" compile="0" resource="0"
+            file="Source/CustomLookAndFeel.h"/>
       <FILE id="E193Xe" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="QvkdvE" name="PluginProcessor.h" compile="0" resource="0"

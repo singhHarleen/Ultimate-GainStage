@@ -51,6 +51,8 @@ public:
     float getDeltaLeveldB() const { return deltaLeveldB_.load(); }
     float getOutputLeveldB() const { return outputLeveldB_.load(); }
     bool isCompensating() const { return isCompensating_.load(); }
+    bool isClipping() const { return isClipping_.load(); }
+    bool isWarning() const { return std::abs(gainReductiondB_.load()) > 10.0f; }
 
 private:
     void processBeforeMode(juce::AudioBuffer<float>& buffer);
@@ -92,6 +94,7 @@ private:
     std::atomic<float> deltaLeveldB_{ -100.0f };
     std::atomic<float> outputLeveldB_{ -100.0f };
     std::atomic<bool> isCompensating_{ false };
+    std::atomic<bool> isClipping_{ false };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(UltimateGainStageAudioProcessor)
 };
